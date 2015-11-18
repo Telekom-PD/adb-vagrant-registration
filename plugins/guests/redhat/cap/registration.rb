@@ -2,7 +2,7 @@ module VagrantPlugins
   module GuestRedHat
     module Cap
       # Common configuration options for all managers
-      DEFAULT_CONFIGURATION_OPTIONS = [:skip, :unregister_on_halt]
+      DEFAULT_CONFIGURATION_OPTIONS = [:manager, :skip, :unregister_on_halt]
 
       # This provides registration capabilities for vagrant-registration
       #

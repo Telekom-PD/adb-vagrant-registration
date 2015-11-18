@@ -38,6 +38,11 @@ That being said, this plugin currently ships only with registration capability f
 ```ruby
   config.registration.unregister_on_halt = false
 ```
+- **manager** select the registration manager implementation. By default the plugin will use the implementation for the subscription-manager's register command, you can however change that by setting the option to a different implementation:
+
+```ruby
+  config.registration.manager = rhn-register
+```
 
 ### subscription-manager Configuration
 
@@ -160,10 +165,12 @@ and Fedora host. You need an imported RHEL 7.1 Vagrant box named `rhel-7.1`.
 To run them:
 
 ```
+export VAGRANT_REGISTRATION_MANAGER=
 export VAGRANT_REGISTRATION_USERNAME=
 export VAGRANT_REGISTRATION_PASSWORD=
 export VAGRANT_REGISTRATION_ORG=
 export VAGRANT_REGISTRATION_ACTIVATIONKEY=
+export VAGRANT_REGISTRATION_SERVERURL=
 ./tests/run.sh
 ```
 

@@ -58,11 +58,6 @@ module VagrantPlugins
         Cap::SubscriptionManager
       end
 
-      guest_capability('redhat', 'subscription_manager_upload_certificate') do
-        require_relative "cap/subscription_manager"
-        Cap::SubscriptionManager
-      end
-
       guest_capability('redhat', 'subscription_manager_unregister') do
         require_relative 'cap/subscription_manager'
         Cap::SubscriptionManager
@@ -81,6 +76,41 @@ module VagrantPlugins
       guest_capability('redhat', 'subscription_manager_secrets') do
         require_relative 'cap/subscription_manager'
         Cap::SubscriptionManager
+      end
+
+      guest_capability('redhat', 'rhn_register') do
+        require_relative 'cap/rhn_register'
+        Cap::RhnRegister
+      end
+
+      guest_capability('redhat', 'rhn_register_registered?') do
+        require_relative 'cap/rhn_register'
+        Cap::RhnRegister
+      end
+
+      guest_capability('redhat', 'rhn_register_register') do
+        require_relative 'cap/rhn_register'
+        Cap::RhnRegister
+      end
+
+      guest_capability('redhat', 'rhn_register_unregister') do
+        require_relative 'cap/rhn_register'
+        Cap::RhnRegister
+      end
+
+      guest_capability('redhat', 'rhn_register_credentials') do
+        require_relative 'cap/rhn_register'
+        Cap::RhnRegister
+      end
+
+      guest_capability('redhat', 'rhn_register_options') do
+        require_relative 'cap/rhn_register'
+        Cap::RhnRegister
+      end
+
+      guest_capability('redhat', 'rhn_register_secrets') do
+        require_relative 'cap/rhn_register'
+        Cap::RhnRegister
       end
     end
   end
